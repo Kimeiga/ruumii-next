@@ -11,4 +11,8 @@ export default createStyles((theme) => ({
       fontSize: 50,
     },
   },
+
+  a: {
+    textDecoration: 'none',
+  }
 }));

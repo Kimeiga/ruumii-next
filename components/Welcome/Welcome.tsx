@@ -1,25 +1,36 @@
-import { Title, Text, Anchor } from '@mantine/core';
+import { Title, Text, Anchor, Container, Button } from '@mantine/core';
 import useStyles from './Welcome.styles';
+import Link from 'next/link';
 
 export function Welcome() {
   const { classes } = useStyles();
 
   return (
     <>
-      <Title className={classes.title} align="center" mt={100}>
-        Welcome to{' '}
-        <Text inherit variant="gradient" component="span">
-          Mantine
+      <Container>
+
+        <Title className={classes.title} align="center" mt={100}>
+          <Text inherit variant="gradient" component="span">
+            Ruumii
+          </Text>
+        </Title>
+        <Text color="dimmed" align="center" size="lg" sx={{ maxWidth: 580 }} mx="auto" mt="xl">
+          Find your perfect roommates
         </Text>
-      </Title>
-      <Text color="dimmed" align="center" size="lg" sx={{ maxWidth: 580 }} mx="auto" mt="xl">
-        This starter Next.js project includes a minimal setup for server side rendering, if you want
-        to learn more on Mantine + Next.js integration follow{' '}
-        <Anchor href="https://mantine.dev/guides/next/" size="lg">
-          this guide
-        </Anchor>
-        . To get started edit index.tsx file.
-      </Text>
+
+        {/* this centered button links to the questions page */}
+        <Link href="/questions">
+          <Button
+            variant="gradient"
+            size="lg"
+            fullWidth
+            mt="xl"
+          >
+            Get started
+          </Button>
+        </Link>
+      </Container>
+
     </>
   );
 }
